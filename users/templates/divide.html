@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block 'content' %}
+<center>
+    {% if my_answer %}
+
+    <div class="alert alert-{{ color }}" role="alert">
+        {{ my_answer }}
+    </div>{% endif %}
+    <br><br>
+    <h1><img src="static/images/{{num_1}}.png"> / <img src="static/images/{{num_2}}.png"></h1>
+
+    <br><br>
+    <form action="{% url 'divide' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Your answer here.." name="answer">
+            <input type="hidden" name="old_num_1" value={{num_1}}>
+            <input type="hidden" name="old_num_2" value={{num_2}}>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-danger">Submit</button>
+    </form>
+</center>
+
+{% endblock %}
