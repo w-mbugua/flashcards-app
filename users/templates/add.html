@@ -1,10 +1,10 @@
-{% extends 'base.html' %} {% block 'content' %} {% load static %}
+{% extends 'base.html' %} {% block 'content' %}
 <center>
     {% if my_answer %}
     <div class="alert alert-{{ color }}" role="alert">
         {{ my_answer }}
     </div>{% endif %}
-    <br><br>
+    <br><br> {% load static %}
     <h1><img src="{% static 'images/{{num_1}}.jpg' %}"> + <img src="nat/images/{{num_2}}.png"></h1>
     <br><br>
     <form action="{% url 'add' %}" method="POST">
