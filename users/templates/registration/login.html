@@ -18,6 +18,7 @@
                     <form action="/accounts/login/" method="post">
                         {% csrf_token %}
                         {% bootstrap_form form%}
+                        <p>If you haven't signed up, click <a href="{% url 'django_registration_register' %}">here</a> to register</p>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary btn-sm" value="Login">
                         </div>

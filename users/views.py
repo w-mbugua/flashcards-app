@@ -1,10 +1,12 @@
 from django.shortcuts import redirect, render
 from .forms import NewFlashCardForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
     return render(request, 'cards/home.html')
 
+@login_required(login_url='/accounts/login/')
 def createcards(request):
     user = request.user
     if request.method == 'POST':
