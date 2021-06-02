@@ -6,7 +6,6 @@
     </div>{% endif %}
     <br><br> {% load static %}
     <h1><img src="static/images/{{num_1}}.png"> + <img src="static/images/{{num_2}}.png"></h1>
-    {% static 'my_app/example.jpg' %}"
     <br><br>
     <form action="{% url 'add' %}" method="POST">
         {% csrf_token %}
