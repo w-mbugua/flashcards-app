@@ -22,14 +22,29 @@
             <a class="dropdown-item" href="/logout">Logout</a>
           </div>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'add' %}">Add</a>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'subtract' %}">Subtract</a>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'multiply' %}">Multiply</a>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'divide' %}">Divide</a>
+      </li>
         {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="/accounts/register">Register</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="/accounts/login">Login</a>
         </li>
         {% endif %}
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
